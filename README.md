@@ -25,37 +25,108 @@ If you know of a Rust OS not listed here, please open an issue or PR.
 
 ---
 
-## 📑 OS Comparison Table
-
-| **OS Name** | **Architecture** | **Pure Rust?** | **Active?** | **Kernel Type** | **Target Use** | **GUI?** | **Filesystem** | **Network Stack** | **License** |
-|------------|------------------|----------------|-------------|------------------|----------------|-----------|------------------|--------------------|-------------|
-| **Redox OS** | x86, x86_64, ARM64, RISC‑V | Yes | Yes | Microkernel | General purpose | Yes | RedoxFS / FAT32 | smoltcp | MIT |
-| **Theseus OS** | x86_64, ARM | Yes | Yes | Safe-language OS | Research + General | Yes | Custom/FAT32 | smoltcp | MIT |
-| **Tock OS** | Cortex‑M, RISC‑V, x86 | Yes | Yes | Embedded kernel | Microcontrollers | No | Custom | APL2/MIT | APL2/MIT |
-| **intermezzOS** | x86_64 | No | No | Educational | Teaching OS dev | No | None | None | APL2/MIT |
-| **ParvaOS** | x86_64 | Yes | Yes | Monolithic | General purpose | Yes | ParvaFS | ? | GPL‑3.0 |
-| **RustOS** | i386 | ? | No | PoC | Educational | No | None | None | MIT |
-| **rustboot** | i386 | ? | No | Bootloader/OS | Educational | No | None | None | MIT |
-| **bkernel** | ARM | Yes | No | Embedded | Embedded devices | No | ? | smoltcp | GPL + exception |
-| **SOS** | x86_64 | Yes | No | Microkernel | PoC | No | None | None | MIT |
-| **reenix** | x86_64 | No | No | Monolithic | PoC | No | None | None | Unknown |
-| **Quasar** | x86_64 | ? | No | ? | ? | No | None | None | ? |
-| **Tifflin (rust_os)** | x86_64 | Almost | Yes | Monolithic | Research | Yes | ISO9660 | ? | BSD‑2 |
-| **MOROS** | x86_64 | Yes | Yes | Monolithic | Minimal OS | No | MFS | smoltcp | MIT |
-| **Felix OS** | x86_64 | Yes | Yes | Monolithic | General | No | FAT16 (RO) | None | MIT |
-| **Aero** | x86_64 | ? | Yes | Monolithic | General | Yes | ? | ? | GPL |
-| **Hermit / HermitCore** | x86_64, ARM64 | Yes | Yes | Unikernel | Cloud/HPC | No | virtiofs | smoltcp | Apache/BSD |
-| **Asterinas** | ? | Yes | Yes | ? | ? | ? | ? | ? | ? |
-| **Twilight OS** | ? | Yes | Yes | ? | ? | ? | ? | ? | ? |
-| **Proka OS** | ? | Yes | Yes | ? | ? | ? | ? | ? | ? |
-| **QuiltOS** | ? | ? | ? | ? | ? | ? | ? | ? | ? |
-| **OpenFang OS** | ? | Yes | Yes | Agent OS | Autonomous agents | No | ? | ? | ? |
-| **Kerla** | x86_64 | Yes | Yes | Linux‑compatible | Linux ABI | No | ? | ? | ? |
-| **Maestro** | x86_64 | Yes | Yes | Linux‑compatible | General | No | ? | ? | ? |
-| **Bottlerocket** | x86_64, ARM | Mostly Rust | Yes | Container OS | Cloud/Containers | No | ? | ? | Apache‑2.0 |
-| **MyOS2026** | x86_64 | Yes | Yes | Monolithic | Educational + Research | Planned | Custom FS (WIP) | Planned | MIT |
+# 🦀 Rust‑Based Operating Systems  
+A complete, categorized, badge‑enhanced index of every known operating system written in Rust.
 
 ---
+
+# 📚 Categories
+- **General‑Purpose OS**
+- **Research / Academic OS**
+- **Embedded / RTOS**
+- **Unikernels**
+- **Agent OS**
+- **Experimental / Hobby OS**
+- **Bootloaders / Stage‑0**
+
+---
+
+# 🟦 General‑Purpose Operating Systems
+
+| OS | Badges | Architecture | Kernel | FS | Networking | License | Status |
+|----|--------|--------------|--------|----|------------|----------|--------|
+| **Redox OS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) ![Kernel](https://img.shields.io/badge/microkernel-purple) ![License](https://img.shields.io/badge/license-MIT-green) | x86, x86_64, ARM64, RISC‑V | Microkernel | RedoxFS | smoltcp | MIT | Active |
+| **ParvaOS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) ![Kernel](https://img.shields.io/badge/monolithic-orange) | x86_64 | Monolithic | ParvaFS | ? | GPL‑3.0 | Active |
+| **Aero** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Monolithic | ? | ? | GPL | Active |
+| **Felix OS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Monolithic | FAT16 (RO) | None | MIT | Active |
+| **MOROS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Monolithic | MFS | smoltcp | MIT | Active |
+| **MyOS2026** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) ![Kernel](https://img.shields.io/badge/monolithic-orange) ![License](https://img.shields.io/badge/license-MIT-green) | x86_64 | Monolithic | Custom FS (WIP) | smoltcp | MIT | Active |
+
+---
+
+# 🟩 Research / Academic Operating Systems
+
+| OS | Badges | Architecture | Kernel | FS | Networking | License | Status |
+|----|--------|--------------|--------|----|------------|----------|--------|
+| **Theseus OS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) ![Kernel](https://img.shields.io/badge/safe--language-9cf) | x86_64, ARM | Safe‑Language OS | Custom | smoltcp | MIT | Active |
+| **Tifflin (rust_os)** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Monolithic | ISO9660 | ? | BSD‑2 | Active |
+| **rCore OS** | ![Arch](https://img.shields.io/badge/arch-RISC--V-blue) | RISC‑V | Teaching OS | Custom | smoltcp | MIT | Active |
+| **zCore** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64, RISC‑V | Zircon‑compatible | Custom | smoltcp | MIT | Active |
+| **Rux (Tsinghua University)** | ![Arch](https://img.shields.io/badge/arch-RISC--V-blue) | RISC‑V | Teaching OS | Custom | ? | MIT | Active |
+| **intermezzOS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Educational | None | None | APL2/MIT | Inactive |
+
+---
+
+# 🟧 Embedded / RTOS
+
+| OS | Badges | Architecture | Kernel | FS | Networking | License | Status |
+|----|--------|--------------|--------|----|------------|----------|--------|
+| **Tock OS** | ![Arch](https://img.shields.io/badge/arch-Cortex--M-blue) | Cortex‑M, RISC‑V, x86 | Embedded kernel | Custom | APL2/MIT | APL2/MIT | Active |
+| **Hubris OS** | ![Arch](https://img.shields.io/badge/arch-Cortex--M-blue) | ARM Cortex‑M | Microkernel | Custom | ? | Apache‑2.0 | Active |
+| **Drone OS** | ![Arch](https://img.shields.io/badge/arch-Cortex--M-blue) | ARM Cortex‑M | RTOS | Custom | ? | MIT | Active |
+| **RTIC** | ![Arch](https://img.shields.io/badge/arch-Cortex--M-blue) | ARM | RTOS Framework | N/A | N/A | MIT | Active |
+| **bkernel** | ![Arch](https://img.shields.io/badge/arch-ARM-blue) | ARM | Embedded | ? | smoltcp | GPL + Exception | Inactive |
+
+---
+
+# 🟥 Unikernels
+
+| OS | Badges | Architecture | Kernel | FS | Networking | License | Status |
+|----|--------|--------------|--------|----|------------|----------|--------|
+| **Hermit / HermitCore** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64, ARM64 | Unikernel | virtiofs | smoltcp | Apache/BSD | Active |
+| **Nebulet** | ![Arch](https://img.shields.io/badge/arch-WASM-blue) | WebAssembly VM | Unikernel | None | None | MIT | Archived |
+| **RuxOS (unikernel)** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Unikernel | ? | ? | MIT | Early Stage |
+
+---
+
+# 🟪 Agent OS
+
+| OS | Badges | Architecture | Kernel | FS | Networking | License | Status |
+|----|--------|--------------|--------|----|------------|----------|--------|
+| **OpenFang OS** | ![Arch](https://img.shields.io/badge/arch-unknown-lightgrey) | ? | Agent OS | ? | ? | ? | Active |
+
+---
+
+# 🟨 Experimental / Hobby OS
+
+| OS | Badges | Architecture | Kernel | FS | Networking | License | Status |
+|----|--------|--------------|--------|----|------------|----------|--------|
+| **RustOS** | ![Arch](https://img.shields.io/badge/arch-i386-blue) | i386 | PoC | None | None | MIT | Inactive |
+| **RustOS64** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Monolithic | ? | ? | MIT | Active |
+| **Ruxpin OS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Monolithic | ? | ? | MIT | Semi‑active |
+| **Rux (Unix‑like)** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Unix‑like | ? | ? | MIT | Early Stage |
+| **Ruxpin Kernel** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Monolithic | ? | ? | MIT | Early Stage |
+| **SOS** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Microkernel | None | None | MIT | Inactive |
+| **Quasar** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | ? | None | None | ? | Inactive |
+| **Asterinas** | ![Arch](https://img.shields.io/badge/arch-unknown-lightgrey) | ? | ? | ? | ? | ? | Active |
+| **Twilight OS** | ![Arch](https://img.shields.io/badge/arch-unknown-lightgrey) | ? | ? | ? | ? | ? | Active |
+| **Proka OS** | ![Arch](https://img.shields.io/badge/arch-unknown-lightgrey) | ? | ? | ? | ? | ? | Active |
+| **QuiltOS** | ![Arch](https://img.shields.io/badge/arch-unknown-lightgrey) | ? | ? | ? | ? | ? | Unknown |
+
+---
+
+# 🟫 Bootloaders / Stage‑0 (Optional Category)
+
+| OS | Badges | Architecture | Kernel | FS | Networking | License | Status |
+|----|--------|--------------|--------|----|------------|----------|--------|
+| **rustboot** | ![Arch](https://img.shields.io/badge/arch-i386-blue) | i386 | Bootloader | None | None | MIT | Inactive |
+| **rboot** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Bootloader | None | None | MIT | Active |
+| **rust-barebones-kernel** | ![Arch](https://img.shields.io/badge/arch-x86__64-blue) | x86_64 | Template Kernel | None | None | MIT | Active |
+
+---
+
+# 🏁 End of Table
+
 
 
 # 🤝 Contributing
